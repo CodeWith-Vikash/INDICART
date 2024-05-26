@@ -8,12 +8,14 @@ import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Error from './components/Errorpage/Error'
 import Singleprod from './components/singleprod/Singleprod'
+import ScrollToTop from './Scrolltop'
 
 const App = () => {
 
   return (
     <BrowserRouter>
       <Header/>
+      <ScrollToTop/>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/search/:query' element={<Search/>}/>
