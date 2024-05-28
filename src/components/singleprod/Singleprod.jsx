@@ -57,7 +57,15 @@ const Singleprod = () => {
         <img src={selectedprod.image} alt="" className='h-[300px] w-[300px] object-cover border-2' />
         <div className='w-[300px] p-4 flex flex-col gap-2 md:gap-4'>
           <p className='font-semibold text-lg'>{selectedprod.title}</p>
-          <b>{String(selectedprod.price).startsWith('$') ? '' : '$'}{selectedprod.price}</b>
+          
+          <p className='font-semibold'>
+            Actual Price : 
+            <b className='font-semibold line-through text-gray-600 mx-1'> {String(selectedprod.oldPrice).startsWith('$') ? '' : '$'}{selectedprod.oldPrice ? selectedprod.oldPrice : String(selectedprod.price).startsWith('$')?Number(selectedprod.price.split('').slice(1).join(''))+10 : ""}</b>
+          </p>
+          <p className='font-semibold'>
+          Deal of the day : 
+          <b> {String(selectedprod.price).startsWith('$') ? '' : '$'}{selectedprod.price}</b>
+          </p>
 
           <div className='flex gap-2'>
             <div className="counter my-2 font-semibold text-xl">
