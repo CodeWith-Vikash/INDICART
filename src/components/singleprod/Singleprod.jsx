@@ -5,6 +5,7 @@ import { SingleContext } from '../../context/SingleContext';
 import { CartContext } from '../../context/CartContext';
 import Product from '../Product/Product'
 import Skeleton from '../Skeleton/Skeleton';
+import { toast } from 'react-toastify';
 
 const Singleprod = () => {
   const { selectedprod } = useContext(SingleContext);
@@ -47,7 +48,7 @@ const Singleprod = () => {
       addToCart(selectedprod, quantity);
       navigate('/cart');
     } else {
-      alert('You already added this item');
+       toast.warning('This item already exists in cart');
     }
   };
 
